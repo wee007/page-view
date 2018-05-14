@@ -1,24 +1,21 @@
-# README
+# Page View
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Context
 
-Things you may want to cover:
+The app is built using Ruby 2.5.0 and Rails 5.1.6, and bootstrap 4.1.1.
 
-* Ruby version
+It sends inputted data to the page view API and displays visualisation of the return histogram data.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+Start up the API
 
-* Database creation
+`rails s -p 3000`
 
-* Database initialization
+Start up the app
 
-* How to run the test suite
+`rails s -p 4000`
 
-* Services (job queues, cache servers, search engines, etc.)
+Go to http://localhost:4000 and input values to display visualisation of the return histogram data.
 
-* Deployment instructions
-
-* ...
+You can run the test specs via `rspec` and a coverage report `index.html` will be created under the `coverage` directory.
