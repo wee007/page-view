@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Histogram from "components/charts/Histogram"
 
 class PageView extends React.Component {
   constructor(props) {
@@ -46,9 +47,7 @@ class PageView extends React.Component {
         {
           this.state.data.map((data) => {
             if (data.error) {
-              return (
-                <div className="alert alert-danger" role="alert">{data.error}</div>
-              )
+              return (<div className="alert alert-danger" role="alert">{data.error}</div>)
             }
           })
         }
@@ -56,25 +55,25 @@ class PageView extends React.Component {
           <div className="form-group row">
             <label htmlFor="url" className="col-sm-1 col-form-label">URLs</label>
             <div className="col-sm-11">
-              <input type="text" name="url" className="form-control" id="url" value={this.state.url} onChange={this.handleChange} />
+              <input type="text" name="url" className="form-control" id="url" value={this.state.url} placeholder="Use comma to separate multiple URLs" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="before" className="col-sm-1 col-form-label">Before</label>
             <div className="col-sm-11">
-              <input type="text" name="before" className="form-control" id="before" value={this.state.before} onChange={this.handleChange} />
+              <input type="text" name="before" className="form-control" id="before" value={this.state.before} placeholder="YYYY-MM-DD" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="after" className="col-sm-1 col-form-label">After</label>
             <div className="col-sm-11">
-              <input type="text" name="after" className="form-control" id="after" value={this.state.after} onChange={this.handleChange} />
+              <input type="text" name="after" className="form-control" id="after" value={this.state.after} placeholder="YYYY-MM-DD" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group row">
             <label htmlFor="interval" className="col-sm-1 col-form-label">Interval</label>
             <div className="col-sm-11">
-              <input type="text" name="interval" className="form-control" id="interval" value={this.state.interval} onChange={this.handleChange} />
+              <input type="text" name="interval" className="form-control" id="interval" value={this.state.interval} placeholder="e.g. 10m (for 10 minutes)" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group row">
@@ -83,11 +82,7 @@ class PageView extends React.Component {
             </div>
           </div>
         </form>
-        {
-          this.state.data.map((data) => {
-            console.log(data)
-          })
-        }
+        <Histogram queryData={this.state.data} />
       </React.Fragment>
     )
   }
