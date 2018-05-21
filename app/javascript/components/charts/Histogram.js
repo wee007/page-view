@@ -64,7 +64,7 @@ class Histogram extends React.Component {
             <VictoryLegend x={50} y={0}
               orientation="vertical"
               gutter={20}
-              data={requestedDataset}
+              data={this.buildLegendData()}
             />
           </VictoryChart>
         </React.Fragment>
