@@ -88,13 +88,4 @@ class PageView extends React.Component {
   }
 }
 
-PageView.propTypes = {
-  url: PropTypes.string,
-  before: PropTypes.string,
-  after: PropTypes.string,
-  interval: PropTypes.string,
-  data: PropTypes.array,
-  error: PropTypes.array
-}
-
 export default PageView
