@@ -8,6 +8,14 @@ It sends inputted data to the page view API and displays visualisation of the re
 
 ## Getting Started
 
+Install gems
+
+`bundle`
+
+Install Victory Chart library
+
+`yarn add victory`
+
 Start up the API
 
 `rails s -p 3000`
