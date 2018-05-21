@@ -6032,7 +6032,7 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-victory-chart@^26.0.0:
+victory-chart@^26.1.0:
   version "26.1.0"
   resolved "https://registry.yarnpkg.com/victory-chart/-/victory-chart-26.1.0.tgz#5c096caf899ca7447c489023809adc32d7c97f12"
   dependencies:
@@ -6041,9 +6041,9 @@ victory-chart@^26.0.0:
     react-fast-compare "^1.0.0"
     victory-core "^22.1.0"
 
-victory-core@^22.0.0, victory-core@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-22.1.0.tgz#f721e67dc0365833a4a632bbb67c00e8b94eac00"
+victory-core@^22.0.0, victory-core@^22.1.0, victory-core@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-22.1.1.tgz#e8fc94e9131c3188c9fa6b3ccbfe93c8cf20ead0"
   dependencies:
     d3-ease "^1.0.0"
     d3-interpolate "^1.1.1"
@@ -6061,12 +6061,12 @@ victory-pie@^15.0.1:
     lodash "^4.17.5"
     victory-core "^22.0.0"
 
-victory@^0.26.0:
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/victory/-/victory-0.26.0.tgz#03a877f038ddc1ae7df57ca720bb74f05a97b053"
+victory@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/victory/-/victory-0.26.1.tgz#9935cdbac89624dad385a43dcf572d2d616b6d6e"
   dependencies:
-    victory-chart "^26.0.0"
-    victory-core "^22.0.0"
+    victory-chart "^26.1.0"
+    victory-core "^22.1.1"
     victory-pie "^15.0.1"
 
 viewport-dimensions@^0.2.0:
