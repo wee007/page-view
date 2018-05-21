@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import ErrorHandler from "components/ErrorHandler"
 import Histogram from "components/charts/Histogram"
 
 class PageView extends React.Component {
@@ -12,11 +13,20 @@ class PageView extends React.Component {
       after: "",
       interval: "",
       data: [],
-      error: []
+      errorResponse: [],
+      error: null,
+      errorInfo: null
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    })
   }
 
   handleChange(event) {
@@ -35,7 +45,7 @@ class PageView extends React.Component {
     })
     .then(response => response.json())
     .then(data => this.setState({ data }))
-    .catch(error => this.setState({ error }))
+    .catch(errorResponse => this.setState({ errorResponse }))
 
     event.preventDefault()
   }
@@ -82,7 +92,11 @@ class PageView extends React.Component {
             </div>
           </div>
         </form>
-        <Histogram queryData={this.state.data} />
+        {this.state.errorInfo ? (
+          <ErrorHandler error={this.state.error} errorInfo={this.state.errorInfo} />
+        ) : (
+          <Histogram queryData={this.state.data} />
+        )}
       </React.Fragment>
     )
   }
